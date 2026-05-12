@@ -121,4 +121,3 @@ Liqiong (Ella) Zheng
 MS Computer Science @ Northeastern University
 GitHub: github.com/liqzheng
 LinkedIn: linkedin.com/in/ella-z
-<img width="468" height="645" alt="image" src="https://github.com/user-attachments/assets/b26a379e-0b88-420a-9555-6be1c02af8f5" />
