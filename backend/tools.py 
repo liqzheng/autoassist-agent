@@ -1,0 +1,85 @@
+import os
+import anthropic
+
+# ─── Tool 1: Search Documents ───────────────────────────────
+def search_documents(query: str) -> str:
+    """Search knowledge base for relevant information."""
+    # Placeholder - will connect to ChromaDB in Step 5
+    return f"[Document Search] No documents uploaded yet. Query was: {query}"
+
+# ─── Tool 2: Analyze Data ───────────────────────────────────
+def analyze_data(task: str, data: str = "") -> str:
+    """Perform data analysis and return insights."""
+    # Placeholder - will add real analysis logic later
+    return f"[Data Analysis] Task received: {task}"
+
+# ─── Tool 3: Web Search ─────────────────────────────────────
+def web_search(query: str) -> str:
+    """Search the web for current information."""
+    # Placeholder - will connect to search API later
+    return f"[Web Search] Results for: {query}"
+
+# ─── Tool definitions for Claude API ────────────────────────
+TOOLS = [
+    {
+        "name": "search_documents",
+        "description": "Search uploaded documents and knowledge base for relevant information",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query"
+                }
+            },
+            "required": ["query"]
+        }
+    },
+    {
+        "name": "analyze_data",
+        "description": "Perform data analysis, calculate statistics, or derive insights",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "task": {
+                    "type": "string",
+                    "description": "The analysis task to perform"
+                },
+                "data": {
+                    "type": "string",
+                    "description": "Optional data context"
+                }
+            },
+            "required": ["task"]
+        }
+    },
+    {
+        "name": "web_search",
+        "description": "Search the web for current information and recent events",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query"
+                }
+            },
+            "required": ["query"]
+        }
+    }
+]
+
+# ─── Execute tool by name ────────────────────────────────────
+
+def execute_tool(name: str, inputs: dict) -> str:
+
+    """Route tool calls to the right function."""
+    
+    if name == "search_documents":
+        return search_documents(inputs["query"])
+    elif name == "analyze_data":
+        return analyze_data(inputs["task"], inputs.get("data", ""))
+    elif name == "web_search":
+        return web_search(inputs["query"])
+    else:
+        return f"Unknown tool: {name}"
