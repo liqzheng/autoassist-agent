@@ -85,7 +85,19 @@ npm run dev
 4. Or run with Docker
 docker-compose up --build
 
-Open http://localhost:5173 in your browser.
+5. Start everything (manual)
+Open two terminal windows:
+
+Terminal 1 - Start backend:
+cd ~/Desktop/autoassist-agent/backend
+source venv/bin/activate
+./venv/bin/python -m uvicorn main:app --reload
+
+Terminal 2 - Start frontend:
+cd ~/Desktop/autoassist-agent/frontend
+npm run dev
+
+Then open your browser and go to: http://localhost:5173
 
 API Endpoints
 Method	Endpoint	Description
@@ -108,4 +120,5 @@ Author
 Liqiong (Ella) Zheng
 MS Computer Science @ Northeastern University
 GitHub: github.com/liqzheng
-LinkedIn: linkedin.com/in/ella-z-3a646b210
+LinkedIn: linkedin.com/in/ella-z
+<img width="468" height="645" alt="image" src="https://github.com/user-attachments/assets/b26a379e-0b88-420a-9555-6be1c02af8f5" />
