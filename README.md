@@ -33,7 +33,7 @@ execute_tool()
     |-- analyze_data      -->  Data analysis
     |-- web_search        -->  Web results
     |
-Final Answer  -->  Frontend
+Final Answer  -->  Frontend （A React frontend sends user messages to a FastAPI backend, which runs a ReAct reasoning loop using Claude API — the agent decides which tool to call (document search via ChromaDB, data analysis, or web search), then returns the final answer to the frontend, with Redis storing conversation history throughout）
 
 Tech Stack
 Layer	Technology
