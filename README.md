@@ -116,9 +116,14 @@ Documents are chunked into 500-character segments, embedded via ChromaDB's defau
 Redis Memory (memory.py)
 Conversation history is serialized as JSON and stored in Redis with a 1-hour TTL. This enables persistent multi-turn context without relying on in-memory state, allowing the backend to scale horizontally.
 
-
+Frontend:
 ## Live Demo
 https://autoassist-agent.vercel.app
+
+Backend:
+cd ~/Desktop/autoassist-agent/backend
+source venv/bin/activate
+python -m uvicorn main:app --reload
 
 
 
